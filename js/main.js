@@ -240,4 +240,7 @@ $(function () {
         });
     });
 
+    $(".back_to_top").on("click", function () {
+        location.href = "/html/login.html";
+    })
 });
