@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クラシッククラッシュ</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css">
+
+</head>
+
+<body>
+
+    <div class="gk_area sub-img js-sub-img">
+        <div class="card">
+            <audio src="/mp3/1.mp3" id="audio" pause="pause" loop="loop"></audio>
+            <img src="/img/download-1.jpg" alt="モーツァルト" class="elected_1">
+        </div>
+
+        <div class="card">
+            <audio src="/mp3/3.mp3" id="audio2" pause="pause" loop="loop"></audio>
+            <img src="/img/download.jpg" alt="ベートヴェン" class="elected_2">
+        </div>
+        <div class="card">
+            <audio src="/mp3/4 (mp3cut.net) (1).mp3" id="audio3" pause="pause" loop="loop"></audio>
+            <img src="/img/bizet.jpg" alt="Dびぜ" class="elected_3">
+        </div>
+        <div class="kuhaku card">
+            <div></div>
+        </div>
+    </div>
+
+    <div class="victory_defeat_area">
+        <div class="gk_ability_score card">
+            <div class="main-img js-main-img">
+                <img src="/img/white.png" alt="" />
+            </div>
+            <!-- <div id="gk">キーパー</div> -->
+            <div id="gk_ability"></div>
+        </div>
+
+
+        <div class="VS_aera card">
+            <!-- <button id="decision_button">勝負ボタン</button> -->
+            <!-- <a href="#" class="btn-gradient-3d decision_button">BUTTON</a> -->
+            <button class="btn-gradient-3d decision_button">VS</button>
+            <div id="victory_or_defeat"> </div>
+        </div>
+
+        <div class="kicker_ability_score card">
+            <div class="shin-img js-shin-img">
+                <img src="/img/white.png" alt="背景" />
+            </div>
+            <!-- <div id="kicker">キッカー</div> -->
+            <div id="ki_ability"></div>
+        </div>
+    </div>
+
+    <div class="kicker_area shin">
+        <div class="card"><button id="sp">SP</button></div>
+        <div class="card">
+            <img src="/img/akikan.jpg" alt="空き缶" class="kicker kicker_1">
+        </div>
+
+        <div class="card">
+            <img src="/img/ダウンロード.png" alt="サッカーボール" class="kicker kicker_2">
+        </div>
+        <div class="card">
+            <img src="/img/inseki.jpg" alt="隕石" class="kicker kicker_3">
+        </div>
+        <!-- <div class="card"><button id="sp">SP</button></div>
+        <button class="kicker kicker_1">空き缶</button>
+        <button class="kicker kicker_2">ボール</button>
+        <button class="kicker kicker_3">隕石</button> -->
+    </div>
+    <script src="main.js"></script>
+
+
+</body>
+
+</html>
