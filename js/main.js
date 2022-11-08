@@ -4,8 +4,90 @@ $(function () {
     let gk_early_max_element_min = 0
     let gk_early_max_element_max = 0
     let isPlaying = false;
-    const kicker_min = []
-    const kicker_max = []
+    let ki_max = 0
+    let ki_min = 0
+    let kicker_width_ability = 0
+    let seconds = 3
+    let clickcount = 0
+
+    $(".btn1").click(function () {
+        //forで20回まで伸縮をくりかえす
+        for (let i = 0; i < 20; i++) {
+            $(".box1").animate(
+                //幅を決める、伸縮の時間を決める
+                { width: "1000" },
+                { duration: 200 },
+            )
+                .animate(
+                    //幅を決める、伸縮の時間を決める
+                    { width: "0" },
+                    { duration: 200 }
+                )
+        }
+    });
+
+    $(".btn2").click(function () {
+        // box1クラスのアニメーションを停止する
+        $(".box1").stop(true, false);
+
+        //横幅のwidhtを取得し、変数testに入れる
+        //widthを100で割る
+        kicker_width_ability = Math.floor($(".box1").width() / 100)
+
+        //モーダルを表示する
+        $('.modal').css('display', 'block');
+    });
+
+    $('#click_button_hits').on('click', function () {
+        //クリック回数を１増加させる
+        clickcount = clickcount + 1
+        $('#clickcount').text(clickcount)
+    })
+
+
+    $('#btnStart').on('click', function () {
+        console.log(seconds)
+        //モーダルの表示
+        $('.modal').css('display', 'block');
+
+        //カウントダウン表示
+        $('#countdown').text(seconds);
+
+        //カウントダウンボタンを隠す
+        $('#btnStart').hide();
+
+        //クリックボタンを表示する
+        $('#click_button_hits').show();
+
+        //startをおされてから3秒後に始まるようにせってい
+        setTimeout(function () {
+            //1秒おきにカウントをマイナスにする
+            cnDown = setInterval(function () {
+                seconds--;
+                //0になったら停止する
+                if (seconds <= 0) {
+                    clearInterval(cnDown);
+                    //クリックボタンを隠す
+                    $('#click_button_hits').hide();
+
+                    //kickerの能力値を決める
+                    ki_max = kicker_width_ability * clickcount
+                    ki_min = ki_max - 50
+                    console.log("ki_max確認", ki_max)
+                    console.log("ki_min確認", ki_min)
+
+                    //モーダルを5秒後に隠す
+                    setTimeout(function () {
+                        $('.modal').css('display', 'none');
+                    }, 3000);
+                }
+                $('#countdown').text(seconds);
+                //１秒ごとに減らす指示
+            }, 1000);
+
+        }, 3000);
+
+    });
 
 
 
@@ -58,34 +140,8 @@ $(function () {
         gk_early_min_element_max = Math.floor(Math.random() * (high_food2 - cheap_food2 + 1)) + cheap_food2
         gk_early_max_element_min = Math.floor(Math.random() * (high_food3 - cheap_food3 + 1)) + cheap_food3
         gk_early_max_element_max = Math.floor(Math.random() * (high_food4 - cheap_food4 + 1)) + cheap_food4
-        console.log("minのmin確認", gk_early_min_element_min)
-        console.log("minのmax確認", gk_early_min_element_max)
-        console.log("maxのmin確認", gk_early_max_element_min)
-        console.log("maxのmax確認", gk_early_max_element_max)
     }
 
-    $(".kicker_1").on("click", function () {
-        kicker_min.splice(0)
-        kicker_max.splice(0)
-        kicker_min.push(5,10,15,20,)
-        kicker_max.push(30,35,40)
-        console.log("kickerのmin確認", kicker_min)
-        console.log("kickerのmax確認", kicker_max)
-    })
-
-    $(".kicker_2").on("click", function () {
-        kicker_min.splice(0)
-        kicker_max.splice(0)
-        kicker_min.push(5,10,20,40)
-        kicker_max.push(40,50,70)
-    })
-
-    $(".kicker_3").on("click", function () {
-        kicker_min.splice(0)
-        kicker_max.splice(0)
-        kicker_min.push(30,40)
-        kicker_max.push(20,80,90,100)
-    })
 
     $("#sp").on("click", function () {
         //gkの最小の要素を反映する
@@ -106,32 +162,21 @@ $(function () {
         const gk_ability = Math.floor(Math.random() * (gk_max - gk_min + 1)) + gk_min
         console.log("gkの能力値", gk_ability)
 
-        /////////////////////////////////////////////////////////////////////
-
-        //キッカーの能力値を決める要素
-        const ki_min = kicker_min[Math.floor(Math.random() * kicker_min.length)]
-        const ki_max = kicker_max[Math.floor(Math.random() * kicker_max.length)]
-        console.log("キッカーの最低値配列", kicker_min)
-        console.log("キッカーの最高値配列", kicker_max)
-        console.log("キッカーの最低値", ki_min)
-        console.log("キッカーの最高値", ki_max)
-
         //キッカー能力値を出す
-
         const ki_ability = Math.floor(Math.random() * (ki_max - ki_min + 1)) + ki_min
-
         let ki_ability2 = ki_ability + sp_power
 
-        console.log("kiの能力値1", ki_ability)
-        console.log("kiの能力値2", sp_power)
-        console.log("kiの能力値", ki_ability + sp_power)
+        //能力値確認
+        console.log("kicker能力値", ki_ability)
+        console.log("spの能力値", sp_power)
+        console.log("kickerのsp後能力値", ki_ability + sp_power)
 
         //勝負をする関数へ
         fight(gk_ability, ki_ability2)
 
     })
 
-
+    //GK選択時に音楽を流す
     function audio() {
         if (isPlaying) {
             $("#audio").get(0).pause();
@@ -204,7 +249,7 @@ $(function () {
             $('#victory_or_defeat').text("再戦だー");
             alert("ここをモーダルにしたい")
             $(".VS_aera").load("draw.html");
-           
+
 
         } else {
             if (ki_ability2 / 2 === gk_early_min_element_min) {
@@ -217,7 +262,7 @@ $(function () {
         }
     }
 
-
+    //選択した画像を中央に表示する
     $(".js-sub-img img").on("click", function () {
         img = $(this).attr("src");
         $(".js-main-img img").fadeOut(100, function () {

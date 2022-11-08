@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/power.css">
+    <title>power</title>
+</head>
+
+<body>
+    <div class="box1">
+    </div>
+    <div>
+        <input type="button" class="btn1" value="アニメーション発生">
+        <input type="button" class="btn2" value="アニメーションを終了">
+    </div>
+
+
+
+    <h2>test modal</h2>
+    <button onclick="displayModal();">Display Modal</button>
+
+    <div class="modal">
+        <div class="modal-window">
+            <div class="modal-contents">
+                <p class="ttest"></p>
+                <div id="countdown"></div>
+                <button type="button" id="btnStart">START</button>
+
+                <!-- カウント数は消す -->
+                <div id="clickcount"></div>
+                <button type="button" id="ccbtn">連打</button>
+            </div>
+        </div>
+    </div>
+    <script src="/js/power.js"></script>
+</body>
+
+</html>

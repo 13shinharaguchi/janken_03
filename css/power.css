@@ -1,0 +1,27 @@
+
+.box1 {
+    width: 0px;
+    height: 150px;
+    background: gold;
+    margin-top: 35px;
+}
+
+.modal {
+    display: none;
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+}
+ 
+.modal-window{
+    z-index: 2;
+    width: 500px;
+    margin: 20% auto;
+    padding: 20px;
+    background-color: white;
+}
