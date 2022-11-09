@@ -9,8 +9,12 @@ $(function () {
     let kicker_width_ability = 0
     let seconds = 5
     let clickcount = 0
+    //画像を配列に格納する
+    const imgs = ['songoku.jpeg', 'sonmasa.jpeg', 'sonfunn.jpeg'];
+    let index = 0;
 
-    $(".btn1").click(function () {
+
+    $(".gauge_start").click(function () {
         //forで20回まで伸縮をくりかえす
         for (let i = 0; i < 20; i++) {
             $(".box1").animate(
@@ -26,7 +30,7 @@ $(function () {
         }
     });
 
-    $(".btn2").click(function () {
+    $(".gauge_stop").click(function () {
         // box1クラスのアニメーションを停止する
         $(".box1").stop(true, false);
 
@@ -36,12 +40,23 @@ $(function () {
 
         //モーダルを表示する
         $('.modal').css('display', 'block');
+
+        //モーダル進化初期画像を表示する
+        $('.modal_img').attr('src', '/img/' + imgs[index]);
     });
 
     $('#click_button_hits').on('click', function () {
         //クリック回数を１増加させる
         clickcount = clickcount + 1
         $('#clickcount').text(clickcount)
+
+        //クリック回数で進化する
+        if (clickcount >= 15) {
+            $('.modal_img').attr('src', '/img/' + imgs[1]);
+            if (clickcount >= 30) {
+                $('.modal_img').attr('src', '/img/' + imgs[2]);
+            }
+        }
     })
 
 
@@ -85,13 +100,9 @@ $(function () {
                 //１秒ごとに減らす指示
             }, 1000);
 
-            //startをおされてから3秒後に始まるように設定
+            //startをおされてから1秒後に始まるように設定
         }, 1000);
-
     });
-
-
-
 
     //キャラ初期値の設定の要素
     $(".elected_1").on("click", function () {
