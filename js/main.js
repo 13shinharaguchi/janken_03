@@ -10,41 +10,11 @@ $(function () {
     let seconds = 5
     let clickcount = 0
     //画像を配列に格納する
-    const imgs = ['songoku.jpeg', 'sonmasa.jpeg', 'sonfunn.jpeg'];
-    let index = 0;
+    const imgs = ['songoku.jpeg', 'sonmasa.jpeg', 'sonfunn.jpeg']
+    let index = 0
+    let duration = 500
 
-
-    $(".gauge_start").click(function () {
-        //forで20回まで伸縮をくりかえす
-        for (let i = 0; i < 20; i++) {
-            $(".box1").animate(
-                //幅を決める、伸縮の時間を決める
-                { width: "1000" },
-                { duration: 200 },
-            )
-                .animate(
-                    //幅を決める、伸縮の時間を決める
-                    { width: "0" },
-                    { duration: 200 }
-                )
-        }
-    });
-
-    $(".gauge_stop").click(function () {
-        // box1クラスのアニメーションを停止する
-        $(".box1").stop(true, false);
-
-        //横幅のwidhtを取得し、変数testに入れる
-        //widthを100で割る
-        kicker_width_ability = Math.floor($(".box1").width() / 100)
-
-        //モーダルを表示する
-        $('.modal').css('display', 'block');
-
-        //モーダル進化初期画像を表示する
-        $('.modal_img').attr('src', '/img/' + imgs[index]);
-    });
-
+   
     $('#click_button_hits').on('click', function () {
         //クリック回数を１増加させる
         clickcount = clickcount + 1
@@ -105,6 +75,7 @@ $(function () {
     });
 
     //キャラ初期値の設定の要素
+    //画像クリック時に
     $(".elected_1").on("click", function () {
         high_food1 = 10
         cheap_food1 = 0
@@ -117,6 +88,7 @@ $(function () {
         gk_power(high_food1, cheap_food1, high_food2, cheap_food2,
             high_food3, cheap_food3, high_food4, cheap_food4)
         audio()
+        duration = 500
     })
 
     $(".elected_2").on("click", function () {
@@ -131,6 +103,7 @@ $(function () {
         gk_power(high_food1, cheap_food1, high_food2, cheap_food2,
             high_food3, cheap_food3, high_food4, cheap_food4)
         audio2()
+        duration = 300
     })
 
     $(".elected_3").on("click", function () {
@@ -145,7 +118,42 @@ $(function () {
         gk_power(high_food1, cheap_food1, high_food2, cheap_food2,
             high_food3, cheap_food3, high_food4, cheap_food4)
         audio3()
+        duration = 100
     })
+
+    $(".gauge_start").click(function () {
+        //forで20回まで伸縮をくりかえす
+        for (let i = 0; i < 20; i++) {
+            $(".box1").animate(
+                //幅を決める、伸縮の時間を決める
+                { width: "1000" },
+                { duration: duration },
+            )
+                .animate(
+                    //幅を決める、伸縮の時間を決める
+                    { width: "0" },
+                    { duration: duration }
+            )
+            console.log(duration)
+        }
+        
+    });
+
+    $(".gauge_stop").click(function () {
+        // box1クラスのアニメーションを停止する
+        $(".box1").stop(true, false);
+
+        //横幅のwidhtを取得し、変数testに入れる
+        //widthを100で割る
+        kicker_width_ability = Math.floor($(".box1").width() / 100)
+
+        //モーダルを表示する
+        $('.modal').css('display', 'block');
+
+        //モーダル進化初期画像を表示する
+        $('.modal_img').attr('src', '/img/' + imgs[index]);
+    });
+
 
     function gk_power(high_food1, cheap_food1, high_food2, cheap_food2, high_food3, cheap_food3, high_food4, cheap_food4) {
         localStorage.clear();
