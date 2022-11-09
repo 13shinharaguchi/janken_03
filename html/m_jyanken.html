@@ -67,25 +67,24 @@
     <div class="box1">
     </div>
     <div>
-        <input type="button" class="btn1" value="ゲージスタート">
-        <input type="button" class="btn2" value="ストップ">
+        <input type="button" class="gauge_start" value="ゲージスタート">
+        <input type="button" class="gauge_stop" value="ストップ">
     </div>
 
     <div class="modal">
         <div class="modal_window">
             <div class="modal_contents">
                 <div class="madal_action_start">
-                    <!-- 秒数を表示する -->
                     <div id="countdown"></div>
                     <button type="button" id="btnStart">Start</button>
                 </div>
                 <button type="button" id="click_button_hits">連打</button>
-                <!-- クリックカウントを表示する -->
+                <!-- クリックカウントを表示する? -->
                 <div id="clickcount"></div>
             </div>
-            <!-- 絵を表示させて、クリック回数で絵を変化させる -->
             <div>
-                <img src="/img/bizet.jpg" alt="" class="modal_img">
+                <img class="modal_img">
+                <div id="changeBtn" class="btn btn-primary mt-3">クリック</div><!-- .btn btn-primary -->
             </div>
         </div>
     </div>
