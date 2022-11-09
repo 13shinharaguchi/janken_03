@@ -15,7 +15,7 @@ $(function () {
     let duration = 500
 
    
-    $('#click_button_hits').on('click', function () {
+    $('.click_button_hits').on('click', function () {
         //クリック回数を１増加させる
         clickcount = clickcount + 1
         $('#clickcount').text(clickcount)
@@ -30,7 +30,7 @@ $(function () {
     })
 
 
-    $('#btnStart').on('click', function () {
+    $('.btnStart').on('click', function () {
         console.log(seconds)
         //モーダルの表示
         $('.modal').css('display', 'block');
@@ -39,10 +39,10 @@ $(function () {
         $('#countdown').text(seconds);
 
         //カウントダウンボタンを隠す
-        $('#btnStart').hide();
+        $('.btnStart').hide();
 
         //クリックボタンを表示する
-        $('#click_button_hits').show();
+        $('.click_button_hits').show();
 
 
         setTimeout(function () {
@@ -53,7 +53,7 @@ $(function () {
                 if (seconds <= 0) {
                     clearInterval(cnDown);
                     //クリックボタンを隠す
-                    $('#click_button_hits').hide();
+                    $('.click_button_hits').hide();
 
                     //kickerの能力値を決める
                     ki_max = kicker_width_ability * clickcount
@@ -92,14 +92,14 @@ $(function () {
     })
 
     $(".elected_2").on("click", function () {
-        high_food1 = 30
-        cheap_food1 = 20
-        high_food2 = 40
-        cheap_food2 = 30
-        high_food3 = 30
-        cheap_food3 = 20
-        high_food4 = 40
-        cheap_food4 = 30
+        high_food1 = 100
+        cheap_food1 = 60
+        high_food2 = 200
+        cheap_food2 = 70
+        high_food3 = 210
+        cheap_food3 = 100
+        high_food4 = 250
+        cheap_food4 = 100
         gk_power(high_food1, cheap_food1, high_food2, cheap_food2,
             high_food3, cheap_food3, high_food4, cheap_food4)
         audio2()
@@ -107,14 +107,14 @@ $(function () {
     })
 
     $(".elected_3").on("click", function () {
-        high_food1 = 50
-        cheap_food1 = 40
-        high_food2 = 60
-        cheap_food2 = 50
-        high_food3 = 50
-        cheap_food3 = 40
-        high_food4 = 60
-        cheap_food4 = 50
+        high_food1 = 200
+        cheap_food1 = 160
+        high_food2 = 250
+        cheap_food2 = 150
+        high_food3 = 260
+        cheap_food3 = 100
+        high_food4 = 500
+        cheap_food4 = 300
         gk_power(high_food1, cheap_food1, high_food2, cheap_food2,
             high_food3, cheap_food3, high_food4, cheap_food4)
         audio3()
@@ -152,6 +152,9 @@ $(function () {
 
         //モーダル進化初期画像を表示する
         $('.modal_img').attr('src', '/img/' + imgs[index]);
+
+        //ストップボタンを表示
+        $('.gauge_stop').show();
     });
 
 
@@ -255,7 +258,7 @@ $(function () {
         $('#ki_ability').text(ki_ability2);
 
         if (ki_ability2 > gk_ability) {
-            if (ki_ability2 - gk_ability >= 45) {
+            if (ki_ability2 - gk_ability >= 200) {
                 $('#victory_or_defeat').text("大きすぎ負け");
             } else if (ki_ability2 - gk_ability === 1) {
                 $('#victory_or_defeat').text("強制負け");

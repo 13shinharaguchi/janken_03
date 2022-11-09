@@ -12,7 +12,6 @@
 </head>
 
 <body>
-
     <div class="gk_area sub-img js-sub-img">
         <div class="card">
             <audio src="/mp3/1.mp3" id="audio" pause="pause" loop="loop"></audio>
@@ -26,9 +25,6 @@
         <div class="card">
             <audio src="/mp3/4 (mp3cut.net) (1).mp3" id="audio3" pause="pause" loop="loop"></audio>
             <img src="/img/bizet.jpg" alt="Dびぜ" class="elected_3">
-        </div>
-        <div class="kuhaku card">
-            <div><button class="back_to_top">最初に戻る</button></div>
         </div>
     </div>
 
@@ -65,21 +61,27 @@
     </div>
     <div class="box1">
     </div>
-    <div>
-        <input type="button" class="gauge_start" value="ゲージスタート">
-        <input type="button" class="gauge_stop" value="ストップ">
+    <div class="action_button_content">
+        <input type="button" class="gauge_start action_button" value="スタート">
+        <input type="button" class="gauge_stop action_button" value="ストップ">
     </div>
+    <!-- <div class="kuhaku card">
+        <div><button class="back_to_top">最初に戻る</button></div>
+    </div> -->
 
     <div class="modal">
         <div class="modal_window">
             <div class="modal_contents">
                 <div class="madal_action_start">
                     <div id="countdown"></div>
-                    <button type="button" id="btnStart">Start</button>
+                    <button type="button" class="btnStart action_button">Start</button>
                 </div>
-                <button type="button" id="click_button_hits">連打</button>
-                <!-- クリックカウントを表示する? -->
-                <div id="clickcount"></div>
+                <a class="btn-emergency click_button_hits">
+                    <span class="btn-emergency-bottom"></span>
+                    <span class="btn-emergency-top"><span>連打！</span></span>
+                </a>
+                <!-- クリックカウントを表示する、表示しない -->
+                <!-- <div id="clickcount"></div> -->
             </div>
             <div>
                 <img class="modal_img">
