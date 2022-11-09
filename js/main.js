@@ -7,7 +7,7 @@ $(function () {
     let ki_max = 0
     let ki_min = 0
     let kicker_width_ability = 0
-    let seconds = 3
+    let seconds = 5
     let clickcount = 0
 
     $(".btn1").click(function () {
@@ -59,7 +59,7 @@ $(function () {
         //クリックボタンを表示する
         $('#click_button_hits').show();
 
-        //startをおされてから3秒後に始まるようにせってい
+
         setTimeout(function () {
             //1秒おきにカウントをマイナスにする
             cnDown = setInterval(function () {
@@ -76,7 +76,7 @@ $(function () {
                     console.log("ki_max確認", ki_max)
                     console.log("ki_min確認", ki_min)
 
-                    //モーダルを5秒後に隠す
+                    //モーダルを～秒に消す設定をする
                     setTimeout(function () {
                         $('.modal').css('display', 'none');
                     }, 3000);
@@ -85,9 +85,11 @@ $(function () {
                 //１秒ごとに減らす指示
             }, 1000);
 
-        }, 3000);
+            //startをおされてから3秒後に始まるように設定
+        }, 1000);
 
     });
+
 
 
 

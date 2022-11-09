@@ -14,28 +14,30 @@
     <div class="box1">
     </div>
     <div>
-        <input type="button" class="btn1" value="アニメーション発生">
-        <input type="button" class="btn2" value="アニメーションを終了">
+        <input type="button" class="btn1" value="ゲージスタート">
+        <input type="button" class="btn2" value="ストップ">
     </div>
 
 
-
-    <h2>test modal</h2>
-    <button onclick="displayModal();">Display Modal</button>
-
     <div class="modal">
-        <div class="modal-window">
-            <div class="modal-contents">
-                <p class="ttest"></p>
-                <div id="countdown"></div>
-                <button type="button" id="btnStart">START</button>
-
-                <!-- カウント数は消す -->
+        <div class="modal_window">
+            <div class="modal_contents">
+                <div class="madal_action_start">
+                    <!-- 秒数を表示する -->
+                    <div id="countdown"></div>
+                    <button type="button" id="btnStart">Start</button>
+                </div>
+                <button type="button" id="click_button_hits">連打</button>
+                <!-- クリックカウントを表示する -->
                 <div id="clickcount"></div>
-                <button type="button" id="ccbtn">連打</button>
+            </div>
+            <!-- 絵を表示させて、クリック回数で絵を変化させる -->
+            <div>
+               <img src="/img/bizet.jpg" alt="">
             </div>
         </div>
     </div>
+
     <script src="/js/power.js"></script>
 </body>
 
