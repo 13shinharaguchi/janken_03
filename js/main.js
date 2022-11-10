@@ -10,7 +10,7 @@ $(function () {
     let seconds = 5
     let clickcount = 0
     //画像を配列に格納する
-    const imgs = ['songoku.jpeg', 'sonmasa.jpeg', 'sonfunn.jpeg']
+    const imgs = ['songoku.jpeg','sonmasa.jpeg', 'sonfunn.jpeg']
     let index = 0
     let duration = 500
 
@@ -22,7 +22,7 @@ $(function () {
         //クリック回数で進化する
         if (clickcount >= 15) {
             $('.modal_img').attr('src', '/img/' + imgs[1]);
-            if (clickcount >= 30) {
+            if (clickcount >= 35) {
                 $('.modal_img').attr('src', '/img/' + imgs[2]);
             }
         }
@@ -41,7 +41,7 @@ $(function () {
         $('.btnStart').hide();
 
         //クリックボタンを表示する
-        $('.click_button_hits').show();
+        $('.btn-emergency').show();
 
 
         setTimeout(function () {
@@ -107,13 +107,13 @@ $(function () {
 
     $(".elected_3").on("click", function () {
         high_food1 = 200
-        cheap_food1 = 160
-        high_food2 = 250
-        cheap_food2 = 150
+        cheap_food1 = 170
+        high_food2 = 300
+        cheap_food2 = 200
         high_food3 = 260
-        cheap_food3 = 100
+        cheap_food3 = 190
         high_food4 = 500
-        cheap_food4 = 300
+        cheap_food4 = 400
         gk_power(high_food1, cheap_food1, high_food2, cheap_food2,
             high_food3, cheap_food3, high_food4, cheap_food4)
         audio3()
@@ -257,7 +257,7 @@ $(function () {
         $('#ki_ability').text(ki_ability2);
 
         if (ki_ability2 > gk_ability) {
-            if (ki_ability2 - gk_ability >= 200) {
+            if (ki_ability2 - gk_ability >= 150) {
                 $('#victory_or_defeat').text("大きすぎ負け");
             } else if (ki_ability2 - gk_ability === 1) {
                 $('#victory_or_defeat').text("強制負け");
@@ -270,7 +270,6 @@ $(function () {
 
         } else if (ki_ability2 === gk_ability) {
             $('#victory_or_defeat').text("再戦だー");
-            alert("ここをモーダルにしたい")
             $(".VS_aera").load("draw.html");
 
 
