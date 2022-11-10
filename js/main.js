@@ -63,7 +63,7 @@ $(function () {
                     //モーダルを～秒に消す設定をする
                     setTimeout(function () {
                         $('.modal').css('display', 'none');
-                    }, 3000);
+                    }, 1000);
                 }
                 $('#countdown').text(seconds);
                 //１秒ごとに減らす指示
@@ -123,7 +123,7 @@ $(function () {
     $(".gauge_start").click(function () {
         //forで20回まで伸縮をくりかえす
         for (let i = 0; i < 20; i++) {
-            $(".box1").animate(
+            $(".power").animate(
                 //幅を決める、伸縮の時間を決める
                 { width: "1000" },
                 { duration: duration },
@@ -140,11 +140,11 @@ $(function () {
 
     $(".gauge_stop").click(function () {
         // box1クラスのアニメーションを停止する
-        $(".box1").stop(true, false);
+        $(".power").stop(true, false);
 
         //横幅のwidhtを取得し、変数testに入れる
         //widthを100で割る
-        kicker_width_ability = Math.floor($(".box1").width() / 100)
+        kicker_width_ability = Math.floor($(".power").width() / 100)
 
         //モーダルを表示する
         $('.modal').css('display', 'block');
@@ -154,6 +154,7 @@ $(function () {
 
         //ストップボタンを表示
         $('.gauge_stop').show();
+        $('.decision_button').show();
     });
 
 
