@@ -78,11 +78,11 @@ $(function () {
     $(".elected_1").on("click", function () {
         high_food1 = 10
         cheap_food1 = 0
-        high_food2 = 20
+        high_food2 = 15
         cheap_food2 = 10
         high_food3 = 10
         cheap_food3 = 0
-        high_food4 = 20
+        high_food4 = 30
         cheap_food4 = 10
         gk_power(high_food1, cheap_food1, high_food2, cheap_food2,
             high_food3, cheap_food3, high_food4, cheap_food4)
@@ -91,14 +91,14 @@ $(function () {
     })
 
     $(".elected_2").on("click", function () {
-        high_food1 = 100
-        cheap_food1 = 60
+        high_food1 = 150
+        cheap_food1 = 90
         high_food2 = 200
-        cheap_food2 = 70
-        high_food3 = 210
+        cheap_food2 = 80
+        high_food3 = 250
         cheap_food3 = 100
-        high_food4 = 250
-        cheap_food4 = 100
+        high_food4 = 300
+        cheap_food4 = 200
         gk_power(high_food1, cheap_food1, high_food2, cheap_food2,
             high_food3, cheap_food3, high_food4, cheap_food4)
         audio2()
@@ -106,13 +106,13 @@ $(function () {
     })
 
     $(".elected_3").on("click", function () {
-        high_food1 = 200
-        cheap_food1 = 170
-        high_food2 = 300
-        cheap_food2 = 200
-        high_food3 = 260
-        cheap_food3 = 190
-        high_food4 = 500
+        high_food1 = 300
+        cheap_food1 = 200
+        high_food2 = 350
+        cheap_food2 = 250
+        high_food3 = 290
+        cheap_food3 = 230
+        high_food4 = 550
         cheap_food4 = 400
         gk_power(high_food1, cheap_food1, high_food2, cheap_food2,
             high_food3, cheap_food3, high_food4, cheap_food4)
