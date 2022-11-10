@@ -1,5 +1,7 @@
 body {
-background: #228b22;
+/* background: #228b22; */
+/* background: repeating-linear-gradient(90deg, #228b22, #228b22 80px, #fff 20px, #fff 100px); */
+background: repeating-linear-gradient( #006400, #006400 80px, #98fb98 80px, #98fb98 140px);
 }
 
 
@@ -140,7 +142,7 @@ img {
     z-index: 2;
     width: 900px;
     height: 600px;
-    margin: 10% auto;
+    margin: 3% auto;
     background-color: floralwhite;
     display: flex;
     justify-content: space-between;
@@ -218,7 +220,8 @@ button.btn {
 
 a.btn-emergency {
     position: relative;
-    display: block;
+    /* display: block; */
+    display: none;
     width: 200px;
     height: 130px;
     margin: 0 auto;
