@@ -154,7 +154,6 @@ img {
 
 
 
-/* このボタンはかっこよいい丸ボタンにする */
 #click_button_hits {
     display: none;
     width: 50px;
@@ -308,7 +307,9 @@ a.btn-emergency:active .btn-emergency-top {
 }
 
 .action_button_content{
-    display: flex;
+    display:flex
 }
 
-.gauge_stop{}
+.display_none{
+    display: none;
+}
