@@ -14,7 +14,6 @@ $(function () {
     let index = 0
     let duration = 500
 
-   
     $('.click_button_hits').on('click', function () {
         //クリック回数を１増加させる
         clickcount = clickcount + 1
@@ -311,5 +310,9 @@ $(function () {
 
     $(".back_to_top").on("click", function () {
         location.href = "/html/login.html";
+    })
+
+    $(".kicker").on("click", function () {
+        $('.display_none').show();
     })
 });

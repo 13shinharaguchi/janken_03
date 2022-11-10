@@ -28,6 +28,18 @@
 - 連打の回数で画像が変化すること
 
 ## 苦戦した点
+### 苦戦したとこ
+- widthの値を取得するところ
+
+### 自分へのメッセージ
 - css に毎回苦戦してるぞ、レイアウトかんがえろ！
+- 途中で思いついたことをそのまま採用するなー
+- 
 
 ## 参考にした web サイトなど
+- [JavaScript | animate()で伸縮アニメーション](https://1-notes.com/javascript-expansion-and-contraction-animation-with-animate/)
+- [jQuery 図形をクリックすると大きさが変わるアニメーション](https://qiita.com/tomtom1107/items/328305d88b7f3977dc15)
+- [transform: scale()で要素を拡大・縮小する方法](https://web-dev.tech/front-end/css/transform-scale-up-down/)
+- [【jQuery】要素の表示・非表示について (show, hide, toggle)](https://www.task-notes.com/entry/20150112/1420994026)
+- [jQueryで幅の取得と設定（width,innerWidth,outerWidth)](https://www.flatflag.nir87.com/width-1077)
+- [【jQuery】5〜0までカウントダウンするスクリプト](https://www.jtm.gr.jp/technote/jquery/countdown/)
