@@ -126,7 +126,6 @@ img {
     background: #EF4123;
 }
 
-/* cssはここからいじる */
 .modal {
     display: none;
     z-index: 1;
@@ -366,4 +365,35 @@ a.btn-emergency:active .btn-emergency-top {
 .power_wrapper .black {
     background-color: #000000;
     width: 100px;
+}
+
+.modal2 {
+    display: none;
+    z-index: 1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal_window2 {
+    z-index: 2;
+    width: 900px;
+    height: 500px;
+    margin: 50px auto;;
+}
+
+.video{
+    width: 100%;
+}
+
+.win_video{
+    display: none;
+}
+
+.lose_video{
+    display: none;
 }
