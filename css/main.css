@@ -88,7 +88,7 @@ img {
 }
 
 .btn-gradient-3d {
-    display:  none;
+    display: none;
     align-items: center;
     justify-content: center;
     line-height: 1;
@@ -124,7 +124,6 @@ img {
     width: 0px;
     height: 50px;
     background: #EF4123;
-    border: 1px solid #ccc;
 }
 
 /* cssはここからいじる */
@@ -312,7 +311,7 @@ a.btn-emergency:active .btn-emergency-top {
 }
 
 
-.action_button_wrapper{
+.action_button_wrapper {
     display: flex;
     justify-content: space-between;
 }
@@ -325,11 +324,46 @@ a.btn-emergency:active .btn-emergency-top {
     display: none;
 }
 
-.gauge_stop{
+.gauge_stop {
     color: red;
 }
 
-.back_to_top{
+.back_to_top {
     width: 100px;
     height: 100px;
+}
+
+.power_wrapper {
+    display: flex;
+    height: 30px;
+}
+
+.power_wrapper .orangered {
+    background-color: #ff4500;
+    width: 180px;
+}
+
+.power_wrapper .darkorange {
+    background-color: #ff8c00;
+    width: 180px;
+}
+
+.power_wrapper .gold {
+    background-color: #ffd700;
+    width: 180px;
+}
+
+.power_wrapper .darkgreen {
+    background-color: #006400;
+    width: 180px;
+}
+
+.power_wrapper .darkblue {
+    background-color: #00008b;
+    width: 180px;
+}
+
+.power_wrapper .black {
+    background-color: #000000;
+    width: 100px;
 }
