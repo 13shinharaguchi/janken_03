@@ -201,8 +201,10 @@ $(function () {
         //勝負をする関数へ
         fight(gk_ability, ki_ability2)
 
-        //5秒に一回リロード
-        setTimeout("location.reload()", 5000);
+        $('.modal2').css('display', 'block');
+        
+        //13秒でリロード
+        setTimeout("location.reload()", 13000);
 
     })
 
@@ -265,17 +267,21 @@ $(function () {
 
         if (ki_ability2 > gk_ability) {
             if (ki_ability2 - gk_ability >= 150) {
-                $("#losesound").get(0).play();
+                $('.lose_video').css('display', 'block');
+                $('.lose_video').get(0).play();
                 $('#victory_or_defeat').text("力みすぎ外した");
             } else if (ki_ability2 - gk_ability === 1) {
-                $("#losesound").get(0).play();
+                $('.lose_video').css('display', 'block');
+                $('.lose_video').get(0).play();
                 $('#victory_or_defeat').text("緊張で外した");
             } else {
                 if (ki_ability2 - gk_ability === 5) {
-                    $("#losesound").get(0).play();
+                    $('.lose_video').css('display', 'block');
+                    $('.lose_video').get(0).play();
                     $('#victory_or_defeat').text("負け負け");
                 }
-                $("#winsound").get(0).play();
+                $('.win_video').css('display', 'block');
+                $('.win_video').get(0).play();
                 $('#victory_or_defeat').text("ゴール");
             }
 
@@ -286,13 +292,16 @@ $(function () {
 
         } else {
             if (ki_ability2 / 2 === gk_early_min_element_min) {
-                $("#winsound").get(0).play();
+                $('.win_video').css('display', 'block');
+                $('.win_video').get(0).play();
                 $('#victory_or_defeat').text("神の手炸裂");
             } else if (gk_ability === 77) {
-                $("#winsound").get(0).play();
+                $('.win_video').css('display', 'block');
+                $('.win_video').get(0).play();
                 $('#victory_or_defeat').text("GK消滅");
             } else {
-                $("#losesound").get(0).play();
+                $('.lose_video').css('display', 'block');
+                $('.lose_video').get(0).play();
                 $('#victory_or_defeat').text("外したー");
             }
         }
