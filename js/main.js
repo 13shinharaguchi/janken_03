@@ -204,7 +204,7 @@ $(function () {
         $('.modal2').css('display', 'block');
         
         //13秒でリロード
-        setTimeout("location.reload()", 13000);
+        setTimeout("location.reload()", 10000);
 
     })
 
