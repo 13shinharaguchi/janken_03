@@ -13,6 +13,7 @@ $(function () {
     const imgs = ['songoku.jpeg','sonmasa.jpeg', 'sonfunn.jpeg']
     let index = 0
     let duration = 500
+    $('.power_wrapper').hide();
 
     $('.click_button_hits').on('click', function () {
         //クリック回数を１増加させる
@@ -125,12 +126,12 @@ $(function () {
         for (let i = 0; i < 20; i++) {
             $(".power").animate(
                 //幅を決める、伸縮の時間を決める
-                { width: "1000" },
+                { width: 1000 },
                 { duration: duration },
             )
                 .animate(
                     //幅を決める、伸縮の時間を決める
-                    { width: "0" },
+                    { width: 0 },
                     { duration: duration }
             )
             console.log(duration)
@@ -170,12 +171,14 @@ $(function () {
     $("#sp").on("click", function () {
         //gkの最小の要素を反映する
         localStorage.setItem('sp_reflect', gk_early_min_element_min);
+        
     })
-
+   
 
     $(".decision_button").on("click", function () {
         let sp_power = Number(localStorage.getItem('sp_reflect'));
         console.log("sppower", sp_power);
+       
         //GKの能力値を決める要素
         const gk_min = Math.floor(Math.random() * (gk_early_min_element_max - gk_early_min_element_min + 1)) + gk_early_min_element_min
         const gk_max = Math.floor(Math.random() * (gk_early_max_element_max - gk_early_max_element_min + 1)) + gk_early_max_element_min
@@ -197,6 +200,9 @@ $(function () {
 
         //勝負をする関数へ
         fight(gk_ability, ki_ability2)
+
+        //5秒に一回リロード
+        setTimeout("location.reload()", 5000);
 
     })
 
@@ -259,13 +265,17 @@ $(function () {
 
         if (ki_ability2 > gk_ability) {
             if (ki_ability2 - gk_ability >= 150) {
-                $('#victory_or_defeat').text("大きすぎ負け");
+                $("#losesound").get(0).play();
+                $('#victory_or_defeat').text("力みすぎ外した");
             } else if (ki_ability2 - gk_ability === 1) {
-                $('#victory_or_defeat').text("強制負け");
+                $("#losesound").get(0).play();
+                $('#victory_or_defeat').text("緊張で外した");
             } else {
                 if (ki_ability2 - gk_ability === 5) {
+                    $("#losesound").get(0).play();
                     $('#victory_or_defeat').text("負け負け");
                 }
+                $("#winsound").get(0).play();
                 $('#victory_or_defeat').text("ゴール");
             }
 
@@ -276,11 +286,14 @@ $(function () {
 
         } else {
             if (ki_ability2 / 2 === gk_early_min_element_min) {
+                $("#winsound").get(0).play();
                 $('#victory_or_defeat').text("神の手炸裂");
             } else if (gk_ability === 77) {
+                $("#winsound").get(0).play();
                 $('#victory_or_defeat').text("GK消滅");
             } else {
-                $('#victory_or_defeat').text("負け");
+                $("#losesound").get(0).play();
+                $('#victory_or_defeat').text("外したー");
             }
         }
     }
@@ -314,5 +327,6 @@ $(function () {
 
     $(".kicker").on("click", function () {
         $('.display_none').show();
+        $('.power_wrapper').show();
     })
 });
