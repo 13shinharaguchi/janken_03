@@ -331,7 +331,7 @@ $(function () {
     });
 
     $(".back_to_top").on("click", function () {
-        location.href = "/html/login.html";
+        location.href = "/html/index.html";
     })
 
     $(".kicker").on("click", function () {
